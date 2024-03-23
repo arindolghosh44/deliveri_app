@@ -9,6 +9,7 @@ import {
 
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
+import Product from "../Product/Product";
 
 const navigation = {
   categories: [
