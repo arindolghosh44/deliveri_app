@@ -7,6 +7,7 @@ import ProductReviewCard from "./ProductReviewCard";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 import { Men_kurta } from "../../../Data/Men_kurta";
 import Product from "../Product/Product";
+import { useNavigate } from "react-router-dom";
 const product = {
   name: "Basic Tee 6-Pack",
   price: "$192",
@@ -66,6 +67,15 @@ function classNames(...classes) {
 export default function ProductDetails() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
+
+  const navigate=useNavigate();
+
+const handleAddToCart=()=>{
+  navigate("/cart")
+}
+
+
+
 
   return (
     <div className="bg-white lg:px-20">
@@ -240,7 +250,7 @@ export default function ProductDetails() {
                     </div>
                   </RadioGroup>
                 </div>
-<div className="mt-3 text-left"> <Button  variant="contained" sx={{px:"2rem",py:"1rem",bgcolor:"#9155fd"}} >
+<div onClick={handleAddToCart} className="mt-3 text-left"> <Button  variant="contained" sx={{px:"2rem",py:"1rem",bgcolor:"#9155fd"}} >
 
 Add To Cart
 
